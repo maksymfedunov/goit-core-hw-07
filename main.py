@@ -36,11 +36,10 @@ def add_contact(args, book):
 
 @input_error
 def change_contact(args, book):
-    name, phone, *_ = args
+    name, old_phone, new_phone = args
     record = book.find(name)
     message = "Contact updated." 
-    if phone:
-        record.edit_phone(record.phones[0].value, phone)  
+    record.edit_phone(old_phone, new_phone)  
     return message
 
 @input_error

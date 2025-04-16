@@ -23,10 +23,10 @@ class Phone(Field):
 class Birthday(Field):
     def __init__(self, value):
         try:
-            parsed_date =  datetime.strptime(value, "%d.%m.%Y").date()
-            super().__init__(parsed_date)
+            datetime.strptime(value, "%d.%m.%Y")
+            super().__init__(value)
         except ValueError:
-            raise ValueError("Неправильный формат даты. Используйте "дд.мм.гггг"")           
+            raise ValueError("Неправильный формат даты. Используйте дд.мм.гггг")           
 
 class Record:
     def __init__(self, name):
