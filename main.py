@@ -60,7 +60,7 @@ def add_birthday(args, book):
     name, birthday = args
     record = book.find(name)
     if birthday:
-        record.append(birthday)
+        record.add_birthday(birthday)
     return f"For {name} add birthday {birthday}"
     
 @input_error
